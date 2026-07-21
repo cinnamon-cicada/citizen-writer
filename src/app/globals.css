@@ -1,26 +1,74 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-parchment: #f4ede0;
+  --color-parchment-dark: #ece2d0;
+  --color-charcoal: #2e2a26;
+  --color-charcoal-soft: #4a443c;
+  --color-sepia: #8a5a34;
+  --color-sepia-soft: #b98a5e;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-parchment: var(--color-parchment);
+  --color-parchment-dark: var(--color-parchment-dark);
+  --color-charcoal: var(--color-charcoal);
+  --color-charcoal-soft: var(--color-charcoal-soft);
+  --color-sepia: var(--color-sepia);
+  --color-sepia-soft: var(--color-sepia-soft);
+  --font-serif: var(--font-crimson-pro);
+  --font-hand: var(--font-kalam);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-parchment);
+  color: var(--color-charcoal);
+  font-family: var(--font-crimson-pro), Georgia, serif;
+  position: relative;
+}
+
+/* Paper-grain texture overlay, generated with an SVG fractal-noise filter
+   so no binary image asset is needed. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+#app-root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hand-drawn underline animation for links */
+.hand-underline {
+  position: relative;
+  text-decoration: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M1 5.5c10-3 20 3 30 0s20-4 30-1 20 3 38-1' fill='none' stroke='%238a5a34' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 0.5em;
+  transition: background-size 0.3s ease;
+  padding-bottom: 0.05em;
+}
+
+.hand-underline:hover,
+.hand-underline:focus-visible {
+  background-size: 100% 0.5em;
+}
+
+/* Matte image treatment: slight desaturation and grain, no glossy sheen */
+.matte-image {
+  filter: saturate(0.82) contrast(0.97) brightness(0.99);
 }

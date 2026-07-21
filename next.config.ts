@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: ["remark-gfm"],
+  },
+});
+
+export default withMDX(nextConfig);
