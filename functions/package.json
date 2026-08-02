@@ -1,0 +1,14 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for citizenwriter — billing hard-cap enforcement",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "firebase-functions": "^7.3.2",
+    "googleapis": "^160.0.0"
+  }
+}

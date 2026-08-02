@@ -1,0 +1,30 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Newsletter signups: anyone can submit an email, no one can read,
+    // update, or delete from the client.
+    match /subscribers/{subscriberId} {
+      allow create: if request.resource.data.keys().hasOnly(['email', 'createdAt'])
+                    && request.resource.data.email is string
+                    && request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$');
+      allow read, update, delete: if false;
+    }
+
+    // Essay comments: publicly readable, anyone can post a comment with
+    // a bounded name/body, no client-side edits or deletes (moderation
+    // happens from the Firebase console).
+    match /comments/{commentId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['essaySlug', 'name', 'body', 'createdAt'])
+                    && request.resource.data.essaySlug is string
+                    && request.resource.data.name is string
+                    && request.resource.data.name.size() <= 80
+                    && request.resource.data.body is string
+                    && request.resource.data.body.size() > 0
+                    && request.resource.data.body.size() <= 2000;
+      allow update, delete: if false;
+    }
+  }
+}
