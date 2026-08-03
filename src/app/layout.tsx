@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Crimson_Pro, Kalam } from "next/font/google";
+import { Crimson_Pro, Special_Elite } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -9,9 +9,9 @@ const crimsonPro = Crimson_Pro({
   subsets: ["latin"],
 });
 
-const kalam = Kalam({
-  variable: "--font-kalam",
-  weight: ["300", "400", "700"],
+const specialElite = Special_Elite({
+  variable: "--font-special-elite",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${crimsonPro.variable} ${kalam.variable}`}>
+    <html lang="en" className={`${crimsonPro.variable} ${specialElite.variable}`}>
       <body className="min-h-full">
         <div id="app-root">
           <Header />
