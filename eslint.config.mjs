@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Separate deployable package with its own tooling/runtime.
+    "functions/**",
   ]),
 ]);
 

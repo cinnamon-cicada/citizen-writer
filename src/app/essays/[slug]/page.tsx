@@ -20,6 +20,7 @@ export function generateStaticParams() {
 }
 
 export const dynamicParams = false;
+export const revalidate = 0;
 
 export async function generateMetadata({
   params,
@@ -37,7 +38,6 @@ export async function generateMetadata({
       description: metadata.summary,
       type: "article",
       publishedTime: metadata.date,
-      tags: metadata.tags,
     },
   };
 }
@@ -59,16 +59,6 @@ export default async function EssayPage({
         <p className="mt-2 text-xs uppercase tracking-widest text-charcoal-soft">
           {formatDate(metadata.date)}
         </p>
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {metadata.tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-full border border-charcoal-soft/30 px-2.5 py-0.5 text-xs text-sepia"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
       </header>
 
       <div className="prose prose-lg max-w-none prose-headings:font-hand prose-headings:font-normal prose-headings:text-charcoal prose-p:text-charcoal prose-p:leading-relaxed prose-a:text-sepia prose-a:no-underline prose-strong:text-charcoal prose-blockquote:border-sepia prose-blockquote:text-charcoal-soft prose-hr:border-charcoal-soft/30 prose-img:rounded-none">

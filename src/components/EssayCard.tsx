@@ -20,16 +20,6 @@ export default function EssayCard({ essay }: { essay: EssaySummary }) {
           {formatDate(essay.date)} &middot; {essay.readingTime} min read
         </p>
         <p className="mt-3 leading-relaxed text-charcoal-soft">{essay.summary}</p>
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {essay.tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-full border border-charcoal-soft/30 px-2.5 py-0.5 text-xs text-sepia"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
       </Link>
     </article>
   );

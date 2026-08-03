@@ -19,13 +19,16 @@ export default async function HomePage() {
         {latest.map((essay) => (
           <EssayCard key={essay.slug} essay={essay} />
         ))}
+        {latest.length === 0 && <p className="py-6 text-charcoal-soft">Nothing published yet.</p>}
       </div>
 
-      <div className="mt-8">
-        <Link href="/essays" className="hand-underline font-hand text-xl text-sepia">
-          Read the archive &rarr;
-        </Link>
-      </div>
+      {latest.length > 0 && (
+        <div className="mt-8">
+          <Link href="/essays" className="hand-underline font-hand text-xl text-sepia">
+            Read the archive &rarr;
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

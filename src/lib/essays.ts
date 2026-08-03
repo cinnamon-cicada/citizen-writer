@@ -8,12 +8,7 @@ interface EssayModule {
   metadata: EssayFrontmatter;
 }
 
-export const ESSAY_SLUGS = [
-  "keeping-a-window-open",
-  "the-discipline-of-the-blunt-pencil",
-  "directions-to-a-house-that-isnt-there-anymore",
-  "what-the-margins-are-for",
-] as const;
+export const ESSAY_SLUGS = [] as const;
 
 export type EssaySlug = (typeof ESSAY_SLUGS)[number];
 
@@ -50,11 +45,4 @@ export async function getAllEssays(): Promise<EssaySummary[]> {
     })
   );
   return essays.sort((a, b) => (a.date < b.date ? 1 : -1));
-}
-
-export async function getAllTags(): Promise<string[]> {
-  const essays = await getAllEssays();
-  const tagSet = new Set<string>();
-  essays.forEach((essay) => essay.tags.forEach((tag) => tagSet.add(tag)));
-  return Array.from(tagSet).sort();
 }
