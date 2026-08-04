@@ -13,17 +13,19 @@ service cloud.firestore {
     }
 
     // Essay comments: publicly readable, anyone can post a comment with
-    // a bounded name/body, no client-side edits or deletes (moderation
-    // happens from the Firebase console).
+    // a bounded name/body. New comments must be submitted unapproved —
+    // approving (and any other edit/delete) happens from the Firebase
+    // console, never from the client.
     match /comments/{commentId} {
       allow read: if true;
-      allow create: if request.resource.data.keys().hasOnly(['essaySlug', 'name', 'body', 'createdAt'])
+      allow create: if request.resource.data.keys().hasOnly(['essaySlug', 'name', 'body', 'createdAt', 'approved'])
                     && request.resource.data.essaySlug is string
                     && request.resource.data.name is string
                     && request.resource.data.name.size() <= 80
                     && request.resource.data.body is string
                     && request.resource.data.body.size() > 0
-                    && request.resource.data.body.size() <= 2000;
+                    && request.resource.data.body.size() <= 2000
+                    && request.resource.data.approved == false;
       allow update, delete: if false;
     }
   }

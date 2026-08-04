@@ -35,7 +35,7 @@ export async function GET() {
   <channel>
     <title>Citizen Writer</title>
     <link>${siteUrl}</link>
-    <description>Reflective personal essays on craft, place, and paying attention.</description>${items}
+    <description>Reflective personal essays on emotions, place, and everyday life</description>${items}
   </channel>
 </rss>`;
 

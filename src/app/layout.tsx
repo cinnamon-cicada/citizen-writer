@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s — Citizen Writer",
   },
   description:
-    "Reflective personal essays on craft, place, and paying attention — written by hand, mostly.",
+    "Reflective personal essays on emotions, place, and strange little worlds — written by hand, mostly.",
   alternates: {
     types: {
       "application/rss+xml": "/feed.xml",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Citizen Writer",
     description:
-      "Reflective personal essays on craft, place, and paying attention — written by hand, mostly.",
+      "Reflective personal essays on emotions, place, and strange little worlds — written by hand, mostly.",
     url: siteUrl,
     siteName: "Citizen Writer",
     type: "website",

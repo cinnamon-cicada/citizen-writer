@@ -37,18 +37,18 @@ export default function AboutPage() {
         <p>
           Citizen Writer is a notebook kept in public, carrying stories from
           this world and the next. Its author has spent the better part of a 
-          decade writing things down before deciding what they mean — grocery-
-          list observations, half-finished arguments, the occasional sentence
+          decade writing things down before deciding what they mean — grocery
+          store observations, half-finished arguments, the occasional sentence
           worth keeping. This is where the keeping happens.
         </p>
         <p>
-          The essays here are not reporting and not advice. They are attempts
+          The essays here are not news and not advice. They are attempts
           to look closely at something ordinary — a room, a habit, a street —
-          until it gives up a little more than it first offered. A touch of 
+          until it gives a little more than it first offered. A touch of 
           magic in an otherwise mundane world. 
         </p>
         <p>
-          If any of it is useful to you, good. If it just passes the time
+          If any of it is useful to you, lovely. If it just passes the time
           honestly, that is enough too.
         </p>
       </div>

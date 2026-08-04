@@ -10,8 +10,8 @@ export default async function HomePage() {
     <div className="pb-16">
       <section className="pt-4 pb-8">
         <p className="max-w-prose leading-relaxed text-charcoal-soft">
-          Essays on craft, place, and the discipline of paying attention —
-          drafted slowly, in pencil, and left mostly as they were found.
+          Essays on emotions, place, and everyday life in strange little worlds —
+          drafted on a MacBook, at 3am, and sometimes paired with steaming tea.
         </p>
       </section>
 
