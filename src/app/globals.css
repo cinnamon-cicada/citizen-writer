@@ -72,3 +72,28 @@ body::before {
 .matte-image {
   filter: saturate(0.82) contrast(0.97) brightness(0.99);
 }
+
+/* Self-drawing line art: each path/circle uses pathLength="1" so a
+   dasharray of 1 always equals its full length, letting dashoffset
+   animate from hidden to fully drawn regardless of the path's shape. */
+.flower-path {
+  fill: none;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation-name: draw-line;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flower-path {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+  }
+}

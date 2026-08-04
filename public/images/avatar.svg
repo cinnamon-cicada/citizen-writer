@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Abstract sketched portrait placeholder">
-  <circle cx="100" cy="100" r="98" fill="#ece2d0" />
-  <path d="M100 40c-24 0-40 20-40 46 0 18 8 32 18 40-30 10-52 30-56 58-1 6 3 10 9 10h138c6 0 10-4 9-10-4-28-26-48-56-58 10-8 18-22 18-40 0-26-16-46-40-46z"
-        fill="none" stroke="#4a443c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.75" />
-  <path d="M72 92c4 10 14 16 28 16s24-6 28-16" fill="none" stroke="#8a5a34" stroke-width="1.6" stroke-linecap="round" opacity="0.6" />
-  <path d="M64 74c6-8 16-12 24-10M112 64c8-2 18 2 24 10" fill="none" stroke="#4a443c" stroke-width="1.6" stroke-linecap="round" opacity="0.55" />
-  <circle cx="82" cy="86" r="2.2" fill="#2e2a26" opacity="0.7" />
-  <circle cx="120" cy="86" r="2.2" fill="#2e2a26" opacity="0.7" />
-</svg>
