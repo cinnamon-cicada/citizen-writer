@@ -9,18 +9,21 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="pb-16 pt-4">
-      <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-        <FlowerLineArt className="h-32 w-32 shrink-0 sm:h-36 sm:w-36" />
-        <h1 className="font-hand text-3xl text-charcoal sm:text-4xl">About</h1>
+      <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-end">
+        <div className="flex shrink-0 items-end gap-2">
+          <FlowerLineArt variant="round" className="h-32 w-32 sm:h-36 sm:w-36" />
+          <FlowerLineArt variant="spiky" className="h-40 w-24 sm:h-44 sm:w-24" />
+          <FlowerLineArt variant="tulip" className="h-40 w-24 sm:h-44 sm:w-24" />
+        </div>
+        <h1 className="font-hand text-3xl text-charcoal sm:text-4xl sm:pb-2">About</h1>
       </div>
 
       <div className="prose prose-lg mt-8 max-w-none prose-p:leading-relaxed prose-p:text-charcoal">
         <p>
-          Student, author, baker, engineer. That&apos;s who I am, and I&apos;m so glad to
-          meet you too :&#41;
+          Student, author, baker, engineer. So glad to meet you too!
         </p>
         <p>
-          Citizen Writer is a notebook kept in public, carrying stories from both
+          Citizen Writer is a notebook kept in public, carrying stories from
           this world and the next. Its author has spent the better part of a 
           decade writing things down before deciding what they mean — grocery-
           list observations, half-finished arguments, the occasional sentence
