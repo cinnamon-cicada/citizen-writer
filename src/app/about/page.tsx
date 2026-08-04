@@ -10,17 +10,29 @@ export default function AboutPage() {
   return (
     <div className="pb-16 pt-4">
       <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-end">
-        <div className="flex shrink-0 items-end gap-2">
-          <FlowerLineArt variant="round" className="h-32 w-32 sm:h-36 sm:w-36" />
-          <FlowerLineArt variant="spiky" className="h-40 w-24 sm:h-44 sm:w-24" />
-          <FlowerLineArt variant="tulip" className="h-40 w-24 sm:h-44 sm:w-24" />
+        <div className="flex shrink-0 items-end">
+          <FlowerLineArt
+            variant="round"
+            startDelay={0}
+            className="h-32 w-32 sm:h-36 sm:w-36"
+          />
+          <FlowerLineArt
+            variant="spiky"
+            startDelay={0.15}
+            className="-ml-9 mb-3 h-40 w-24 sm:h-44 sm:w-24"
+          />
+          <FlowerLineArt
+            variant="tulip"
+            startDelay={0.3}
+            className="-ml-10 mb-1 h-40 w-24 sm:h-44 sm:w-24"
+          />
         </div>
         <h1 className="font-hand text-3xl text-charcoal sm:text-4xl sm:pb-2">About</h1>
       </div>
 
       <div className="prose prose-lg mt-8 max-w-none prose-p:leading-relaxed prose-p:text-charcoal">
         <p>
-          Student, author, baker, engineer. So glad to meet you too!
+          Student, author, baker, engineer. Fancy seeing you here.
         </p>
         <p>
           Citizen Writer is a notebook kept in public, carrying stories from

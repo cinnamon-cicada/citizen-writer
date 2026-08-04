@@ -104,9 +104,11 @@ export type FlowerVariant = keyof typeof FLOWER_VARIANTS;
 export default function FlowerLineArt({
   variant = "round",
   className = "",
+  startDelay = 0,
 }: {
   variant?: FlowerVariant;
   className?: string;
+  startDelay?: number;
 }) {
   const config = FLOWER_VARIANTS[variant];
   const [cx, cy] = config.center;
@@ -137,7 +139,7 @@ export default function FlowerLineArt({
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        style={{ animationDelay: "0s", animationDuration: "0.9s" }}
+        style={{ animationDelay: `${startDelay}s`, animationDuration: "0.9s" }}
       />
       {config.leaves.map((leaf, i) => (
         <path
@@ -149,7 +151,7 @@ export default function FlowerLineArt({
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ animationDelay: `${0.5 + i * 0.25}s`, animationDuration: "0.6s" }}
+          style={{ animationDelay: `${startDelay + 0.5 + i * 0.25}s`, animationDuration: "0.6s" }}
         />
       ))}
       {petalPaths.map((d, i) => (
@@ -162,7 +164,7 @@ export default function FlowerLineArt({
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ animationDelay: `${1.2 + i * 0.22}s`, animationDuration: "0.5s" }}
+          style={{ animationDelay: `${startDelay + 1.2 + i * 0.22}s`, animationDuration: "0.5s" }}
         />
       ))}
       <circle
@@ -173,7 +175,7 @@ export default function FlowerLineArt({
         pathLength={1}
         stroke="currentColor"
         strokeWidth="1.6"
-        style={{ animationDelay: `${1.2 + config.petalCount * 0.22 + 0.1}s`, animationDuration: "0.4s" }}
+        style={{ animationDelay: `${startDelay + 1.2 + config.petalCount * 0.22 + 0.1}s`, animationDuration: "0.4s" }}
       />
     </svg>
   );
